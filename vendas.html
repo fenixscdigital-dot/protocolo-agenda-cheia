@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titleProtocolo Agenda Cheia | O Método Definitivo para Profissionais de Saúde/title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #00a8e8;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --accent: #ffcc00;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #003366 0%, #0056b3 100%);
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+        }
+
+        .headline {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .subheadline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Lead Section */
+        .lead-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .lead-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .lead-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: #f0f4f8;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Product Presentation */
+        .product-intro {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .product-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            background: #f9fcff;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--dark);
+            color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            margin-top: 20px;
+            font-weight: 700;
+            font-style: normal;
+            color: var(--secondary);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Pricing & CTA */
+        .pricing {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.5rem;
+        }
+
+        .new-price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 25px 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 15px 30px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(40, 167, 69, 0.4);
+        }
+
+        .guarantee {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .headline { font-size: 1.8rem; }
+            .new-price { font-size: 3rem; }
+            .cta-button { font-size: 1.2rem; padding: 20px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="headline">Lote sua Agenda em 30 Dias Mesmo que Você Não Entenda Nada de Marketing</h1>
+            <p class="subheadline">O método passo a passo para profissionais de saúde dominarem o Google, WhatsApp e Gestão sem precisar virar "blogueiro".</p>
+        </div>
+    </header>
+
+    <section class="lead-section">
+        <div class="container">
+            <div class="lead-content">
+                <p><strong>Você já sentiu que é um excelente profissional, mas o seu consultório parece invisível?</strong></p>
+                <p>Você estudou anos para salvar vidas e cuidar de pessoas, mas ninguém te ensinou como atrair pacientes qualificados, como responder no WhatsApp para não ser ignorado ou como aparecer no topo do Google quando alguém busca pelo seu serviço.</p>
+                <p>O resultado é uma agenda com buracos, a dependência total do "boca a boca" e aquela sensação frustrante de ver profissionais menos qualificados que você com a agenda lotada.</p>
+                <p><strong>Foi então que eu descobri que o segredo não é postar dancinhas, mas sim ter um Protocolo.</strong> Existe um método simples, focado em resultados reais, que transforma o seu consultório em uma máquina de atração de pacientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">O que você vai dominar com o Protocolo:</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Google Meu Negócio</h3>
+                    <p>Como ser encontrado por quem já está procurando seu serviço agora, sem gastar um centavo em anúncios.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Scripts de WhatsApp</h3>
+                    <p>O segredo para responder interessados e transformar "quanto custa?" em "qual o horário disponível?".</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Gestão de No-Show</h3>
+                    <p>Como reduzir as faltas em até 80% com um processo simples de confirmação.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Instagram Estratégico</h3>
+                    <p>Como criar autoridade sem precisar se expor ou virar refém das redes sociais.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Controle Financeiro</h3>
+                    <p>O segredo para ter previsibilidade de caixa que os grandes consultórios usam mas nunca contam.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Fidelização de Pacientes</h3>
+                    <p>Como fazer o seu paciente atual se tornar o seu maior promotor de forma automática.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Atendimento Digital</h3>
+                    <p>Como criar uma experiência de luxo desde o primeiro "oi" no WhatsApp.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Anúncios que Vendem</h3>
+                    <p>O passo a passo para investir pouco e atrair os pacientes certos para o seu nicho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-intro">
+        <div class="container">
+            <div class="product-box">
+                <h2 style="margin-bottom: 20px;">Conheça o Protocolo Agenda Cheia</h2>
+                <p>O Protocolo Agenda Cheia é um método prático e direto ao ponto, desenhado exclusivamente para médicos, dentistas, fisioterapeutas e profissionais de saúde que não têm tempo a perder. Ele entrega os modelos prontos, os scripts validados e o passo a passo de gestão que você nunca aprendeu na faculdade.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Quem já aplicou o método:</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    "Minha agenda tinha buracos toda semana. Depois de aplicar os scripts de WhatsApp do Protocolo, minha taxa de conversão dobrou em 15 dias. Hoje não dependo mais só de indicação."
+                    <div class="testimonial-author">Dra. Mariana L. - Dentista (Curitiba/PR)</div>
+                </div>
+                <div class="testimonial-card">
+                    "Eu achava que marketing era difícil. O Protocolo me mostrou que com 15 minutos por dia eu consigo organizar meu Google e atrair pacientes particulares todos os dias."
+                    <div class="testimonial-author">Dr. Ricardo S. - Fisioterapeuta (Salvador/BA)</div>
+                </div>
+                <div class="testimonial-card">
+                    "O melhor investimento que fiz para o meu consultório este ano. O controle financeiro e o processo de confirmação de consultas mudaram meu faturamento."
+                    <div class="testimonial-author">Dra. Camila M. - Psicóloga (São Paulo/SP)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">"Mas e se eu não tiver tempo para marketing?"</div>
+                <p>O Protocolo foi feito para profissionais ocupados. Você só precisa de 15 a 20 minutos por dia para aplicar as ferramentas prontas que entregamos.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">"Preciso aparecer ou gravar vídeos?"</div>
+                <p>Não! O método foca em processos de gestão, Google e atendimento. Você constrói autoridade sem precisar se expor se não quiser.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">"Serve para o meu nicho específico?"</div>
+                <p>Sim! O Protocolo foi validado para todas as áreas da saúde: medicina, odontologia, fisioterapia, nutrição, psicologia e estética.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <p>O valor justo por todo esse conhecimento seria de pelo menos R$ 297,00...</p>
+            <p class="old-price">De R$ 297,00</p>
+            <p>Por apenas 12x de</p>
+            <p class="new-price">R$ 6,93</p>
+            <p>ou R$ 67,00 à vista</p>
+            
+            <a href="https://pay.kiwify.com.br/Eegyk7X" class="cta-button">QUERO LOTAR MINHA AGENDA AGORA!</a>
+            
+            <div class="guarantee">
+                <img src="https://img.icons8.com/color/48/000000/guarantee.png" alt="Garantia" style="vertical-align: middle; width: 30px;">
+                <strong>Garantia Incondicional de 7 Dias:</strong> Se você não gostar, devolvemos 100% do seu dinheiro.
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">Compra 100% Segura e Acesso Imediato.</p>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 0; text-align: center; font-size: 0.8rem; color: #666;">
+        <p>&copy; 2026 FenixSC Digital - Todos os direitos reservados.</p>
+        <p>CNPJ: 00.000.000/0001-00 | analuziacardoso@gmail.com</p>
+    </footer>
+
+</body>
+</html>

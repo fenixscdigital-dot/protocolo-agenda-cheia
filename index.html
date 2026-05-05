@@ -1,922 +1,363 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Agenda Cheia — Kit Digital para Profissionais da Saúde</title>
-    <meta name="description" content="O kit digital completo para profissionais da saúde que querem lotar a agenda, profissionalizar o atendimento e crescer online. Por apenas R$67 na semana de lançamento.">
+    <titleProtocolo Agenda Cheia | O Método Definitivo para Profissionais de Saúde/title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
-            --azul: #1B3A6B;
-            --verde: #4ECDC4;
-            --branco: #FFFFFF;
-            --cinza-claro: #F5F7FA;
-            --cinza-texto: #444444;
-            --vermelho: #E74C3C;
-            --amarelo: #F39C12;
+            --primary: #0056b3;
+            --secondary: #00a8e8;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --accent: #ffcc00;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Lato', sans-serif;
-            color: var(--cinza-texto);
-            background-color: #FFFFFF;
-            line-height: 1.7;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
         }
 
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        a { text-decoration: none; color: inherit; }
-
-        /* ===== BARRA DE URGÊNCIA ===== */
-        .urgency-bar {
-            background-color: var(--vermelho);
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #003366 0%, #0056b3 100%);
             color: white;
-            text-align: center;
-            padding: 12px 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            letter-spacing: 0.5px;
-        }
-
-        .urgency-bar span {
-            background-color: rgba(255,255,255,0.2);
-            padding: 2px 10px;
-            border-radius: 4px;
-            margin-left: 8px;
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            background: linear-gradient(135deg, #0D2447 0%, #1B3A6B 60%, #1a5276 100%);
-            color: white;
-            padding: 70px 20px 80px;
+            padding: 60px 0 80px;
             text-align: center;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background-color: var(--verde);
-            color: var(--azul);
-            font-family: 'Montserrat', sans-serif;
+        .headline {
+            font-size: 2.5rem;
             font-weight: 800;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 8px 20px;
-            border-radius: 30px;
-            margin-bottom: 30px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: white;
         }
 
-        .hero h1 {
-            font-size: clamp(30px, 5vw, 54px);
-            font-weight: 900;
-            line-height: 1.15;
-            max-width: 900px;
-            margin: 0 auto 25px;
-        }
-
-        .hero h1 em {
-            color: var(--verde);
-            font-style: normal;
-        }
-
-        .hero-sub {
-            font-size: clamp(16px, 2.5vw, 20px);
-            max-width: 700px;
+        .subheadline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 800px;
             margin: 0 auto 40px;
             opacity: 0.9;
-            line-height: 1.7;
         }
 
-        .hero-cta-btn {
-            display: inline-block;
-            background-color: var(--verde);
-            color: var(--azul);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 18px;
-            padding: 20px 50px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 30px rgba(78,205,196,0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
+        /* Lead Section */
+        .lead-section {
+            padding: 60px 0;
+            background: white;
         }
 
-        .hero-cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(78,205,196,0.5);
+        .lead-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
         }
 
-        .hero-price-hint {
-            margin-top: 18px;
-            font-size: 14px;
-            opacity: 0.75;
+        .lead-content p {
+            margin-bottom: 20px;
         }
 
-        .hero-price-hint s { opacity: 0.6; }
-
-        /* ===== SEÇÃO DORES ===== */
-        .section { padding: 70px 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .container-wide { max-width: 1100px; margin: 0 auto; }
-
-        .section-label {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--verde);
-            margin-bottom: 12px;
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: #f0f4f8;
         }
 
         .section-title {
-            font-size: clamp(24px, 4vw, 38px);
-            font-weight: 800;
-            color: var(--azul);
-            line-height: 1.25;
-            margin-bottom: 20px;
-        }
-
-        .section-title em {
-            color: var(--verde);
-            font-style: normal;
-        }
-
-        .section-desc {
-            font-size: 17px;
-            color: #555;
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-
-        .bg-light { background-color: var(--cinza-claro); }
-        .bg-dark { background-color: var(--azul); color: white; }
-        .bg-dark .section-title { color: white; }
-        .bg-dark .section-desc { color: rgba(255,255,255,0.8); }
-
-        /* Dores */
-        .pain-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .pain-item {
-            background: white;
-            border-left: 4px solid var(--vermelho);
-            padding: 20px 25px;
-            border-radius: 0 8px 8px 0;
-            font-size: 16px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        }
-
-        .pain-item .icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-
-        /* ===== PARA QUEM É ===== */
-        .for-who-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .for-who-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(78,205,196,0.3);
-            border-radius: 12px;
-            padding: 25px 20px;
             text-align: center;
-            transition: background 0.2s;
-        }
-
-        .for-who-card:hover { background: rgba(78,205,196,0.1); }
-        .for-who-card .emoji { font-size: 36px; display: block; margin-bottom: 12px; }
-        .for-who-card .name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: var(--verde); }
-
-        /* ===== MÓDULOS ===== */
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .module-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--verde);
-            transition: transform 0.2s;
-        }
-
-        .module-card:hover { transform: translateY(-4px); }
-
-        .module-number {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--verde);
-            margin-bottom: 8px;
-        }
-
-        .module-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 20px;
-            color: var(--azul);
-            margin-bottom: 12px;
-        }
-
-        .module-desc {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .module-items {
-            list-style: none;
-        }
-
-        .module-items li {
-            font-size: 14px;
-            color: #444;
-            padding: 5px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .module-items li::before {
-            content: "✓";
-            color: var(--verde);
+            font-size: 2rem;
             font-weight: 700;
-            flex-shrink: 0;
+            margin-bottom: 50px;
         }
 
-        /* ===== RESULTADOS ===== */
-        .results-grid {
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .result-card {
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Product Presentation */
+        .product-intro {
+            padding: 80px 0;
+            background: white;
             text-align: center;
-            padding: 30px 20px;
-            background: rgba(255,255,255,0.06);
-            border-radius: 12px;
-            border: 1px solid rgba(78,205,196,0.2);
         }
 
-        .result-icon { font-size: 40px; margin-bottom: 15px; display: block; }
-        .result-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 17px; color: var(--verde); margin-bottom: 8px; }
-        .result-desc { font-size: 14px; opacity: 0.85; }
+        .product-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            background: #f9fcff;
+        }
 
-        /* ===== DEPOIMENTOS ===== */
-        .testimonials-grid {
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--dark);
+            color: white;
+        }
+
+        .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .testimonial-card {
-            background: white;
-            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
             padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            position: relative;
-        }
-
-        .testimonial-stars { color: #F39C12; font-size: 20px; margin-bottom: 15px; }
-
-        .testimonial-text {
-            font-size: 15px;
-            color: #444;
+            border-radius: 15px;
             font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.7;
         }
 
         .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--azul), var(--verde));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
+            margin-top: 20px;
             font-weight: 700;
-            font-size: 18px;
-            color: white;
-            flex-shrink: 0;
+            font-style: normal;
+            color: var(--secondary);
         }
 
-        .testimonial-name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: var(--azul); }
-        .testimonial-role { font-size: 13px; color: #888; }
-
-        /* ===== PREÇO ===== */
-        .price-box {
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
             background: white;
-            border-radius: 20px;
-            padding: 50px 40px;
-            max-width: 600px;
-            margin: 40px auto 0;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
-            text-align: center;
-            border-top: 6px solid var(--verde);
         }
-
-        .price-label {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--vermelho);
-            margin-bottom: 10px;
-        }
-
-        .price-original {
-            font-size: 20px;
-            color: #999;
-            text-decoration: line-through;
-            margin-bottom: 5px;
-        }
-
-        .price-current {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 64px;
-            color: var(--azul);
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .price-current sup { font-size: 28px; vertical-align: top; margin-top: 14px; display: inline-block; }
-        .price-current span { font-size: 36px; }
-
-        .price-note {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 30px;
-        }
-
-        .price-cta-btn {
-            display: block;
-            background: linear-gradient(135deg, var(--verde), #3ab5ac);
-            color: var(--azul);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 20px;
-            padding: 22px 40px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 30px rgba(78,205,196,0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        .price-cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(78,205,196,0.5);
-        }
-
-        .price-security {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 13px;
-            color: #888;
-        }
-
-        .price-security span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* ===== GARANTIA ===== */
-        .guarantee-box {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 700px;
-            margin: 0 auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .guarantee-icon { font-size: 80px; flex-shrink: 0; }
-
-        .guarantee-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 24px;
-            color: var(--azul);
-            margin-bottom: 12px;
-        }
-
-        .guarantee-text { font-size: 15px; color: #555; line-height: 1.7; }
-
-        /* ===== FAQ ===== */
-        .faq-list { max-width: 750px; margin: 40px auto 0; }
 
         .faq-item {
-            border-bottom: 1px solid #E2E8F0;
-            padding: 25px 0;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
         }
 
         .faq-question {
-            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 17px;
-            color: var(--azul);
-            margin-bottom: 12px;
-            cursor: pointer;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary);
         }
 
-        .faq-answer { font-size: 15px; color: #555; line-height: 1.7; }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background-color: #0D2447;
-            color: rgba(255,255,255,0.7);
+        /* Pricing & CTA */
+        .pricing {
+            padding: 100px 0;
             text-align: center;
-            padding: 40px 20px;
-            font-size: 13px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
-        .footer-brand {
-            font-family: 'Montserrat', sans-serif;
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.5rem;
+        }
+
+        .new-price {
+            font-size: 4rem;
             font-weight: 800;
-            font-size: 22px;
-            color: var(--verde);
-            margin-bottom: 8px;
+            color: var(--dark);
+            margin: 10px 0;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 15px 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a { color: rgba(255,255,255,0.6); font-size: 13px; }
-        .footer-links a:hover { color: var(--verde); }
-
-        /* ===== STICKY BOTTOM CTA (mobile) ===== */
-        .sticky-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--verde);
-            padding: 14px 20px;
-            text-align: center;
-            z-index: 999;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-        }
-
-        .sticky-cta a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 16px;
-            color: var(--azul);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* ===== DIVIDER ===== */
-        .divider {
-            width: 60px;
-            height: 4px;
-            background: var(--verde);
-            border-radius: 2px;
-            margin: 15px 0 25px;
-        }
-
-        /* ===== WHAT'S INSIDE LIST ===== */
-        .inside-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
+        .cta-button {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 25px 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 15px 30px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
             margin-top: 30px;
         }
 
-        .inside-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            background: white;
-            padding: 18px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(40, 167, 69, 0.4);
         }
 
-        .inside-item .check {
-            width: 28px;
-            height: 28px;
-            background: var(--verde);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 14px;
-            flex-shrink: 0;
+        .guarantee {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
         }
 
-        .inside-item-text strong {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--azul);
-            margin-bottom: 3px;
-        }
-
-        .inside-item-text span { font-size: 13px; color: #666; }
-
-        /* ===== RESPONSIVE ===== */
+        /* Responsive */
         @media (max-width: 768px) {
-            .guarantee-box { flex-direction: column; text-align: center; }
-            .guarantee-icon { font-size: 60px; }
-            .price-current { font-size: 52px; }
-            .sticky-cta { display: block; }
-            body { padding-bottom: 60px; }
-            .modules-grid { grid-template-columns: 1fr; }
+            .headline { font-size: 1.8rem; }
+            .new-price { font-size: 3rem; }
+            .cta-button { font-size: 1.2rem; padding: 20px 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRA DE URGÊNCIA -->
-    <div class="urgency-bar">
-        🔥 SEMANA DE LANÇAMENTO — Oferta expira em breve! <span>DE R$97 POR R$67</span>
-    </div>
-
-    <!-- HERO -->
-    <section class="hero">
+    <header>
         <div class="container">
-            <div class="hero-badge">Kit Digital para Profissionais da Saúde</div>
-            <h1>
-                Sua agenda lotada, sua clínica profissional<br>
-                e seus pacientes <em>chegando até você</em> —<br>
-                tudo isso em um único protocolo.
-            </h1>
-            <p class="hero-sub">
-                O <strong>Protocolo Agenda Cheia</strong> é o kit digital completo que entrega as ferramentas práticas que nenhuma faculdade ensinou: como aparecer no Google, lotar o WhatsApp, ter um site profissional e controlar seu financeiro — mesmo sem equipe de marketing.
-            </p>
-            <a href="https://pay.kiwify.com.br/Eegyk7X" class="hero-cta-btn">
-                Quero o Protocolo Agenda Cheia →
-            </a>
-            <p class="hero-price-hint">
-                <s>De R$ 97</s> &nbsp;|&nbsp; <strong style="color: var(--verde); font-size: 18px;">Por apenas R$ 67 esta semana</strong>
-            </p>
+            <h1 class="headline">Lote sua Agenda em 30 Dias Mesmo que Você Não Entenda Nada de Marketing</h1>
+            <p class="subheadline">O método passo a passo para profissionais de saúde dominarem o Google, WhatsApp e Gestão sem precisar virar "blogueiro".</p>
         </div>
-    </section>
+    </header>
 
-    <!-- DORES -->
-    <section class="section bg-light">
+    <section class="lead-section">
         <div class="container">
-            <div class="section-label">Você se identifica?</div>
-            <h2 class="section-title">Se você é profissional da saúde e sente que…</h2>
-            <ul class="pain-list">
-                <li class="pain-item"><span class="icon">😔</span> Sua agenda tem horários vazios toda semana, mesmo sendo um ótimo profissional</li>
-                <li class="pain-item"><span class="icon">📱</span> Pacientes somem no WhatsApp depois de perguntar o preço e você não sabe o que dizer</li>
-                <li class="pain-item"><span class="icon">🔍</span> Você não aparece no Google quando alguém busca pela sua especialidade na sua cidade</li>
-                <li class="pain-item"><span class="icon">💻</span> Não tem site ou tem um que não converte nenhum paciente novo</li>
-                <li class="pain-item"><span class="icon">💸</span> Não sabe ao certo quanto entra, quanto sai e se a clínica está dando lucro de verdade</li>
-                <li class="pain-item"><span class="icon">📲</span> Quer usar o Instagram mas não sabe o que postar sem parecer amador ou antiético</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- PARA QUEM É -->
-    <section class="section bg-dark">
-        <div class="container">
-            <div class="section-label" style="color: var(--verde);">Esse protocolo foi feito para você</div>
-            <h2 class="section-title">Para qualquer profissional da saúde que quer crescer</h2>
-            <div class="for-who-grid">
-                <div class="for-who-card"><span class="emoji">🦷</span><span class="name">Dentista</span></div>
-                <div class="for-who-card"><span class="emoji">🧠</span><span class="name">Psicólogo(a)</span></div>
-                <div class="for-who-card"><span class="emoji">🥗</span><span class="name">Nutricionista</span></div>
-                <div class="for-who-card"><span class="emoji">🏃</span><span class="name">Fisioterapeuta</span></div>
-                <div class="for-who-card"><span class="emoji">💆</span><span class="name">Dermatologista</span></div>
-                <div class="for-who-card"><span class="emoji">👶</span><span class="name">Pediatra</span></div>
-                <div class="for-who-card"><span class="emoji">🩺</span><span class="name">Clínico Geral</span></div>
-                <div class="for-who-card"><span class="emoji">💊</span><span class="name">E muito mais...</span></div>
+            <div class="lead-content">
+                <p><strong>Você já sentiu que é um excelente profissional, mas o seu consultório parece invisível?</strong></p>
+                <p>Você estudou anos para salvar vidas e cuidar de pessoas, mas ninguém te ensinou como atrair pacientes qualificados, como responder no WhatsApp para não ser ignorado ou como aparecer no topo do Google quando alguém busca pelo seu serviço.</p>
+                <p>O resultado é uma agenda com buracos, a dependência total do "boca a boca" e aquela sensação frustrante de ver profissionais menos qualificados que você com a agenda lotada.</p>
+                <p><strong>Foi então que eu descobri que o segredo não é postar dancinhas, mas sim ter um Protocolo.</strong> Existe um método simples, focado em resultados reais, que transforma o seu consultório em uma máquina de atração de pacientes.</p>
             </div>
         </div>
     </section>
 
-    <!-- O QUE ESTÁ INCLUÍDO -->
-    <section class="section">
+    <section class="benefits">
         <div class="container">
-            <div class="section-label">O que você recebe</div>
-            <h2 class="section-title">5 módulos práticos para <em>transformar sua clínica</em></h2>
-            <div class="divider"></div>
-            <div class="modules-grid">
-
-                <div class="module-card">
-                    <div class="module-number">Módulo 01</div>
-                    <div class="module-title">🔍 Checklist Topo do Google</div>
-                    <p class="module-desc">Apareça na primeira posição quando um paciente buscar pela sua especialidade na sua cidade.</p>
-                    <ul class="module-items">
-                        <li>Passo a passo para configurar o Google Meu Negócio</li>
-                        <li>Palavras-chave certas para sua especialidade</li>
-                        <li>Scripts prontos para pedir avaliações 5 estrelas</li>
-                        <li>QR Code para facilitar avaliações</li>
-                    </ul>
+            <h2 class="section-title">O que você vai dominar com o Protocolo:</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Google Meu Negócio</h3>
+                    <p>Como ser encontrado por quem já está procurando seu serviço agora, sem gastar um centavo em anúncios.</p>
                 </div>
-
-                <div class="module-card">
-                    <div class="module-number">Módulo 02</div>
-                    <div class="module-title">📱 Scripts de WhatsApp "Agenda Cheia"</div>
-                    <p class="module-desc">Nunca mais perca um paciente por não saber o que responder no WhatsApp.</p>
-                    <ul class="module-items">
-                        <li>Script para quem perguntou o preço e sumiu</li>
-                        <li>Mensagens de confirmação que reduzem faltas</li>
-                        <li>Sequência de pós-consulta para fidelizar</li>
-                        <li>Regras de ouro do WhatsApp clínico</li>
-                    </ul>
+                <div class="benefit-card">
+                    <h3>Scripts de WhatsApp</h3>
+                    <p>O segredo para responder interessados e transformar "quanto custa?" em "qual o horário disponível?".</p>
                 </div>
-
-                <div class="module-card">
-                    <div class="module-number">Módulo 03</div>
-                    <div class="module-title">💻 Template Landing Page High-Ticket</div>
-                    <p class="module-desc">Um site profissional que converte visitantes em pacientes — sem precisar de programador.</p>
-                    <ul class="module-items">
-                        <li>Template HTML completo e editável (7 seções)</li>
-                        <li>Guia de edição passo a passo em PDF</li>
-                        <li>Headlines prontas por especialidade</li>
-                        <li>Otimizado para mobile e carregamento rápido</li>
-                    </ul>
+                <div class="benefit-card">
+                    <h3>Gestão de No-Show</h3>
+                    <p>Como reduzir as faltas em até 80% com um processo simples de confirmação.</p>
                 </div>
-
-                <div class="module-card">
-                    <div class="module-number">Módulo 04</div>
-                    <div class="module-title">📊 Planilha Fluxo de Caixa da Clínica</div>
-                    <p class="module-desc">Saiba exatamente quanto você ganha, quanto gasta e qual é o seu lucro real.</p>
-                    <ul class="module-items">
-                        <li>7 abas completas (Entradas, Saídas, Lucro Real)</li>
-                        <li>Calculadora de custo por paciente</li>
-                        <li>Semáforo financeiro automático</li>
-                        <li>Calculadora de ROI em anúncios</li>
-                    </ul>
+                <div class="benefit-card">
+                    <h3>Instagram Estratégico</h3>
+                    <p>Como criar autoridade sem precisar se expor ou virar refém das redes sociais.</p>
                 </div>
-
-                <div class="module-card">
-                    <div class="module-number">Módulo Bônus</div>
-                    <div class="module-title">🤖 Pack 30 Prompts de IA para Instagram</div>
-                    <p class="module-desc">Conteúdo profissional para o Instagram em menos de 5 minutos por dia usando IA.</p>
-                    <ul class="module-items">
-                        <li>30 prompts prontos em 6 categorias</li>
-                        <li>Posts educativos, conexão, prova social</li>
-                        <li>Roteiros de Reels e Stories</li>
-                        <li>Calendário editorial mensal completo</li>
-                    </ul>
+                <div class="benefit-card">
+                    <h3>Controle Financeiro</h3>
+                    <p>O segredo para ter previsibilidade de caixa que os grandes consultórios usam mas nunca contam.</p>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- RESULTADOS ESPERADOS -->
-    <section class="section bg-dark">
-        <div class="container">
-            <div class="section-label" style="color: var(--verde);">O que muda na sua clínica</div>
-            <h2 class="section-title">Resultados que você pode esperar ao aplicar o protocolo</h2>
-            <div class="results-grid">
-                <div class="result-card">
-                    <span class="result-icon">📅</span>
-                    <div class="result-title">Agenda mais cheia</div>
-                    <div class="result-desc">Mais pacientes chegando pelo Google e WhatsApp</div>
+                <div class="benefit-card">
+                    <h3>Fidelização de Pacientes</h3>
+                    <p>Como fazer o seu paciente atual se tornar o seu maior promotor de forma automática.</p>
                 </div>
-                <div class="result-card">
-                    <span class="result-icon">⭐</span>
-                    <div class="result-title">Mais avaliações 5 estrelas</div>
-                    <div class="result-desc">Reputação online que atrai novos pacientes</div>
+                <div class="benefit-card">
+                    <h3>Atendimento Digital</h3>
+                    <p>Como criar uma experiência de luxo desde o primeiro "oi" no WhatsApp.</p>
                 </div>
-                <div class="result-card">
-                    <span class="result-icon">💰</span>
-                    <div class="result-title">Controle financeiro real</div>
-                    <div class="result-desc">Saber exatamente quanto a clínica lucra</div>
-                </div>
-                <div class="result-card">
-                    <span class="result-icon">📲</span>
-                    <div class="result-title">Instagram profissional</div>
-                    <div class="result-desc">Conteúdo ético que gera autoridade e confiança</div>
+                <div class="benefit-card">
+                    <h3>Anúncios que Vendem</h3>
+                    <p>O passo a passo para investir pouco e atrair os pacientes certos para o seu nicho.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
-    <section class="section bg-light">
-        <div class="container-wide">
-            <div style="text-align:center; margin-bottom: 10px;">
-                <div class="section-label" style="display:inline-block;">Quem já aplicou</div>
+    <section class="product-intro">
+        <div class="container">
+            <div class="product-box">
+                <h2 style="margin-bottom: 20px;">Conheça o Protocolo Agenda Cheia</h2>
+                <p>O Protocolo Agenda Cheia é um método prático e direto ao ponto, desenhado exclusivamente para médicos, dentistas, fisioterapeutas e profissionais de saúde que não têm tempo a perder. Ele entrega os modelos prontos, os scripts validados e o passo a passo de gestão que você nunca aprendeu na faculdade.</p>
             </div>
-            <h2 class="section-title" style="text-align:center;">Profissionais que transformaram suas clínicas</h2>
-            <div class="testimonials-grid">
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Quem já aplicou o método:</h2>
+            <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Nunca imaginei que configurar o Google Meu Negócio faria tanta diferença. Em menos de 30 dias, comecei a receber ligações de pacientes que me encontraram na busca. O checklist é muito prático e direto ao ponto."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">AM</div>
-                        <div>
-                            <div class="testimonial-name">Ana M.</div>
-                            <div class="testimonial-role">Nutricionista</div>
-                        </div>
-                    </div>
+                    "Minha agenda tinha buracos toda semana. Depois de aplicar os scripts de WhatsApp do Protocolo, minha taxa de conversão dobrou em 15 dias. Hoje não dependo mais só de indicação."
+                    <div class="testimonial-author">Dra. Mariana L. - Dentista (Curitiba/PR)</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Os scripts de WhatsApp mudaram completamente como eu atendo. Antes eu perdia muitos pacientes que perguntavam o preço e sumiam. Agora tenho uma resposta pronta e profissional para cada situação."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">RC</div>
-                        <div>
-                            <div class="testimonial-name">Ricardo C.</div>
-                            <div class="testimonial-role">Fisioterapeuta</div>
-                        </div>
-                    </div>
+                    "Eu achava que marketing era difícil. O Protocolo me mostrou que com 15 minutos por dia eu consigo organizar meu Google e atrair pacientes particulares todos os dias."
+                    <div class="testimonial-author">Dr. Ricardo S. - Fisioterapeuta (Salvador/BA)</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"A planilha de fluxo de caixa foi uma revelação. Pela primeira vez em 5 anos de consultório eu sei exatamente quanto estou lucrando. Simples, visual e completa. Recomendo para qualquer colega."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">PL</div>
-                        <div>
-                            <div class="testimonial-name">Patrícia L.</div>
-                            <div class="testimonial-role">Psicóloga</div>
-                        </div>
-                    </div>
+                    "O melhor investimento que fiz para o meu consultório este ano. O controle financeiro e o processo de confirmação de consultas mudaram meu faturamento."
+                    <div class="testimonial-author">Dra. Camila M. - Psicóloga (São Paulo/SP)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PREÇO -->
-    <section class="section" id="comprar">
+    <section class="faq">
         <div class="container">
-            <div style="text-align:center; margin-bottom: 10px;">
-                <div class="section-label" style="display:inline-block;">Investimento</div>
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">"Mas e se eu não tiver tempo para marketing?"</div>
+                <p>O Protocolo foi feito para profissionais ocupados. Você só precisa de 15 a 20 minutos por dia para aplicar as ferramentas prontas que entregamos.</p>
             </div>
-            <h2 class="section-title" style="text-align:center;">Tudo isso por um valor que cabe no seu bolso</h2>
-
-            <div class="price-box">
-                <div class="price-label">🔥 Oferta de Lançamento — Tempo Limitado</div>
-                <div class="price-original">De R$ 97,00</div>
-                <div class="price-current">
-                    <sup>R$</sup><span>67</span>
-                </div>
-                <p class="price-note">Pagamento único • Acesso imediato • Sem mensalidade</p>
-
-                <a href="https://pay.kiwify.com.br/Eegyk7X" class="price-cta-btn">
-                    ✅ Quero o Protocolo Agenda Cheia por R$67
-                </a>
-
-                <div class="price-security">
-                    <span>🔒 Pagamento seguro</span>
-                    <span>📲 Acesso imediato</span>
-                    <span>🛡️ Garantia de 7 dias</span>
-                </div>
-
-                <div style="margin-top: 25px; padding-top: 25px; border-top: 1px solid #E2E8F0;">
-                    <p style="font-size: 14px; color: #888; margin-bottom: 10px;">Dúvidas antes de comprar? Fale com a gente:</p>
-                    <a href="https://wa.me/5577983173157" style="display:inline-flex; align-items:center; gap:8px; background:#25D366; color:white; padding:12px 25px; border-radius:30px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px;">
-                        💬 Falar no WhatsApp
-                    </a>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question">"Preciso aparecer ou gravar vídeos?"</div>
+                <p>Não! O método foca em processos de gestão, Google e atendimento. Você constrói autoridade sem precisar se expor se não quiser.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">"Serve para o meu nicho específico?"</div>
+                <p>Sim! O Protocolo foi validado para todas as áreas da saúde: medicina, odontologia, fisioterapia, nutrição, psicologia e estética.</p>
             </div>
         </div>
     </section>
 
-    <!-- GARANTIA -->
-    <section class="section bg-light">
+    <section class="pricing">
         <div class="container">
-            <div class="guarantee-box">
-                <div class="guarantee-icon">🛡️</div>
-                <div>
-                    <h3 class="guarantee-title">Garantia incondicional de 7 dias</h3>
-                    <p class="guarantee-text">
-                        Se por qualquer motivo você não ficar satisfeito com o Protocolo Agenda Cheia, basta nos enviar uma mensagem em até 7 dias após a compra e devolvemos 100% do seu investimento — sem perguntas, sem burocracia.
-                        <br><br>
-                        Você não tem nada a perder. O risco é todo nosso.
-                    </p>
-                </div>
+            <p>O valor justo por todo esse conhecimento seria de pelo menos R$ 297,00...</p>
+            <p class="old-price">De R$ 297,00</p>
+            <p>Por apenas 12x de</p>
+            <p class="new-price">R$ 6,93</p>
+            <p>ou R$ 67,00 à vista</p>
+            
+            <a href="https://pay.kiwify.com.br/Eegyk7X" class="cta-button">QUERO LOTAR MINHA AGENDA AGORA!</a>
+            
+            <div class="guarantee">
+                <img src="https://img.icons8.com/color/48/000000/guarantee.png" alt="Garantia" style="vertical-align: middle; width: 30px;">
+                <strong>Garantia Incondicional de 7 Dias:</strong> Se você não gostar, devolvemos 100% do seu dinheiro.
             </div>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">Compra 100% Segura e Acesso Imediato.</p>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section">
-        <div class="container">
-            <div style="text-align:center; margin-bottom: 10px;">
-                <div class="section-label" style="display:inline-block;">Perguntas frequentes</div>
-            </div>
-            <h2 class="section-title" style="text-align:center;">Ainda tem dúvidas?</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">📦 O que exatamente recebo ao comprar?</div>
-                    <div class="faq-answer">Você recebe acesso imediato a 5 módulos digitais: Checklist Topo do Google (PDF), Scripts de WhatsApp (PDF), Template Landing Page (HTML + Guia PDF), Planilha Fluxo de Caixa (Excel) e Pack 30 Prompts de IA (PDF). Tudo disponível para download na plataforma Kiwify.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">🖥️ Preciso ter conhecimento técnico para usar?</div>
-                    <div class="faq-answer">Não! Todos os materiais foram criados pensando em profissionais da saúde que não têm equipe de marketing. Os guias são passo a passo, com linguagem simples e exemplos práticos. Se você sabe usar o WhatsApp, consegue aplicar o protocolo.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">⏰ Em quanto tempo vejo resultados?</div>
-                    <div class="faq-answer">Depende de qual módulo você aplicar primeiro. O Checklist do Google pode gerar novos pacientes em 2 a 4 semanas. Os scripts de WhatsApp têm efeito imediato. O site pode ser publicado em um dia. Os resultados dependem da sua dedicação em aplicar o protocolo.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">💳 Quais formas de pagamento são aceitas?</div>
-                    <div class="faq-answer">Aceitamos cartão de crédito (parcelado), Pix e boleto bancário — tudo processado com segurança pela plataforma Kiwify.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">🛡️ E se eu não gostar?</div>
-                    <div class="faq-answer">Você tem 7 dias de garantia incondicional. Se não ficar satisfeito por qualquer motivo, basta entrar em contato pelo WhatsApp (77) 98317-3157 e devolvemos 100% do seu dinheiro, sem questionamentos.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">📲 Tenho suporte se precisar de ajuda?</div>
-                    <div class="faq-answer">Sim! Oferecemos suporte via WhatsApp. Basta enviar uma mensagem para (77) 98317-3157 e nossa equipe da FenixSC Digital vai te ajudar.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="section" style="background: linear-gradient(135deg, #0D2447, #1B3A6B); text-align:center;">
-        <div class="container">
-            <h2 style="font-size:clamp(26px,4vw,42px); font-weight:900; color:white; margin-bottom:20px; line-height:1.2;">
-                Sua agenda não vai lotar<br>esperando o momento certo.
-            </h2>
-            <p style="font-size:18px; color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 40px;">
-                O momento certo é agora. Com o Protocolo Agenda Cheia, você tem tudo que precisa para atrair, atender e fidelizar pacientes — de forma profissional e ética.
-            </p>
-<a href="https://pay.kiwify.com.br/Eegyk7X" class="hero-cta-btn">
-            Quero o Protocolo Agenda Cheia por R$67 →
-        </a>
-            <p style="margin-top:15px; color:rgba(255,255,255,0.6); font-size:14px;">
-                🔒 Pagamento seguro • Acesso imediato • Garantia de 7 dias
-            </p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-brand">FenixSC Digital</div>
-        <p>@fenixscdigital &nbsp;|&nbsp; Suporte: (77) 98317-3157</p>
-        <div class="footer-links">
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Termos de Uso</a>
-            <a href="https://wa.me/5577983173157">Suporte via WhatsApp</a>
-        </div>
-        <p style="margin-top:15px; font-size:12px; opacity:0.5;">
-            © 2026 FenixSC Digital. Todos os direitos reservados.<br>
-            Este produto é um kit digital educativo. Os resultados podem variar conforme a dedicação de cada profissional.
-        </p>
+    <footer style="padding: 40px 0; text-align: center; font-size: 0.8rem; color: #666;">
+        <p>&copy; 2026 FenixSC Digital - Todos os direitos reservados.</p>
+        <p>CNPJ: 00.000.000/0001-00 | analuziacardoso@gmail.com</p>
     </footer>
-
-    <!-- STICKY BOTTOM CTA (mobile) -->
-    <div class="sticky-cta">
-        <a href="https://pay.kiwify.com.br/Eegyk7X">🔥 Garantir meu acesso por R$67 →</a>
-    </div>
 
 </body>
 </html>
